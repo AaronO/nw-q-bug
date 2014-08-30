@@ -1,0 +1,23 @@
+
+<script type="text/javascript">
+require('./q');
+var log = document.writeln.bind(document);
+var now = Date.now;
+
+var interval = setInterval(function() {
+var t1 = now();
+    Q(4)
+.then(function() {
+    log('took '+(now()-t1)+' ms');
+});
+}, 500);
+
+log("Doing random stuff");
+
+Q()
+.then(function() {
+    log("Done");
+});
+
+</script>
+
